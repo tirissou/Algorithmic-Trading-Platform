@@ -1,13 +1,15 @@
 
+create schema public_app;
+create schema private_app;
 
-create table "symbols"
+create table public_app.symbols
 (
     id serial,
     symbol varchar(8),
     primary key (symbol)
 );
 
-create table "daily_data"
+create table public_app.daily_data
 (
   symbol_id integer          not null
     constraint daily_data_symbol_foreign references "symbols",
@@ -20,3 +22,14 @@ create table "daily_data"
   constraint "daily_data_pkey"
   primary key (symbol_id, time)
 );
+
+create table private_app.users
+(
+    id serial primary key,
+    first_name varchar(32),
+    last_name varchar(32),
+    email varchar(64),
+    password varchar(256)
+);
+
+CREATE INDEX users_lower_email ON private_app.users(lower(email));

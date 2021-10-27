@@ -1,7 +1,9 @@
 version: "3.9"
 services:
   postgresql:
-    image: "postgres:alpine"
+    build: ./database/
     restart: "on-failure"
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_PASSWORD: psqlpass
