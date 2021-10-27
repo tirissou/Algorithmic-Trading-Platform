@@ -1,3 +1,12 @@
+
+
+create table "symbols"
+(
+    id serial,
+    symbol varchar(8),
+    primary key (symbol)
+);
+
 create table "daily_data"
 (
   symbol_id integer          not null
@@ -9,5 +18,5 @@ create table "daily_data"
   close    double precision not null,
   volume   double precision,
   constraint "daily_data_pkey"
-  primary key (ticker, time)
+  primary key (symbol_id, time)
 );

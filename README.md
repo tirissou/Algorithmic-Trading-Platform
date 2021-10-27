@@ -24,10 +24,10 @@ serving application in production.
 
 # Action Items
 
-- [ ] Design database structure for historical data
-    - [ ] Historical Data table
-    - [ ] symbols table
-- [ ] Setup linting for sql files
+- [X] Design database structure for historical data
+    - [X] Historical Data table
+    - [X] symbols table
+- [X] Setup linting for sql files
 - [ ] Data intake from historical data files into PostgreSQL
 - [ ] Setup postgraphile
 
